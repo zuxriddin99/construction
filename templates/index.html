@@ -44,34 +44,34 @@
 
                     <!-- raising-menu -->
                     <ul class="raising-menu">
-                        <li class="current"><a href="#id1">Home</a>
+                        <li class="current"><a href="#id1">Bosh saxifa</a>
                         </li>
-                        <li><a href="#id2">About</a>
+                        <li><a href="#id2">Biz haqimizda</a>
                         </li>
-                        <li><a href="#id3">service</a>
+                        <li><a href="#id3">Yangiliklar</a>
                         </li>
-                        <li><a href="#id4">gallery</a>
+                        <li><a href="#id4">Galereya</a>
                         </li>
                         <li><a href="#id5">testimonial</a>
                         </li>
-                        <li><a href="#id6">team</a>
+                        <li><a href="#id6">Bizning jamoa</a>
                         </li>
-                        <li><a href="#id7">contact us</a>
+                        <li><a href="#id7">Manzil</a>
                         </li>
                     </ul><!-- raising-menu -->
 
                     <div class="navbar-toggle"><i class="fa fa-bars"></i></div>
                 </nav><!-- End / raising-nav -->
 
-                <div class="btn-right">
-                    <div class="search-btn"><i class="fa fa-search"></i></div>
-                </div>
-                <div class="searchbar">
-                    <div class="searchbar__group"><span class="searchbar__addon"><i class="fa fa-search"></i></span>
-                        <input class="searchbar__input" type="text" name="search" value="" placeholder="Search"/><span
-                                class="searchbar__close"></span>
-                    </div>
-                </div>
+                {#                <div class="btn-right">#}
+                {#                    <div class="search-btn"><i class="fa fa-search"></i></div>#}
+                {#                </div>#}
+                {#                <div class="searchbar">#}
+                {#                    <div class="searchbar__group"><span class="searchbar__addon"><i class="fa fa-search"></i></span>#}
+                {#                        <input class="searchbar__input" type="text" name="search" value="" placeholder="Search"/><span#}
+                {#                                class="searchbar__close"></span>#}
+                {#                    </div>#}
+                {#                </div>#}
             </div>
         </div>
     </header><!-- End / header -->
@@ -605,106 +605,33 @@
         <section class="md-section" id="id5">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-2 ">
+                    <div class="col-sm-6 col-md-6 col-lg-3 ">
 
-                        <!-- sec-title -->
-                        <div class="sec-title sec-title__lg-title md-text-center">
-                            <h2 class="sec-title__title">Testimonial</h2><span class="sec-title__divider"></span>
-                        </div><!-- End / sec-title -->
+                        <!-- team -->
+                        <div class="team">
+                            <a href="#">
+                                <div class="team__img"><img src="{% static 'assets/img/team/1.jpg' %}" alt=""/>
+                                    <div class="team__overlay">
+                                        <div class="md-tb">
 
-                    </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="team__body">
+                            <div class="team__user">
+                                <h4 class="team__name">Sean Coleman</h4><span class="team__work">Photography</span>
+                            </div>
+                            <p class="team__text">Nam elit ligula, egestas et ornare non, viverra eu justo. Aliquam
+                                ornare lectus ut</p>
+                        </div>
+                    </div><!-- End / team -->
+
                 </div>
 
                 <!-- swiper swiper-container -->
-                <div class="swiper swiper-container"
-                     data-options='{"slidesPerView":3,"spaceBetween":30,"breakpoints":{"600":{"slidesPerView":1},"991":{"slidesPerView":2,"spaceBetween":30}}}'>
-                    <div class="swiper-wrapper">
-                        <div class="testimonial-item">
-
-                            <!-- quote -->
-                            <blockquote class="quote">
-                                <p>Nam suscipit nisi risus, et porttitor metus molestie a. Phasellus id quam id turpis
-                                    suscipit pretium. Maecenas ultrices, lacus ut accumsan maximus, odio augue rhoncus
-                                    augue,</p>
-                            </blockquote><!-- End / quote -->
-
-
-                            <!-- authorbox -->
-                            <div class="authorbox">
-                                <div class="authorbox__avartar" style="background-image: url(https://unsplash.it/800);">
-                                    <img src="{% static 'https://unsplash.it/800' %}" alt=""/></div>
-                                <div class="authorbox__info">
-                                    <h5 class="authorbox__name">Raymond Mendoza</h5>
-                                    <p class="authorbox__work">Developer</p>
-                                </div>
-                            </div><!-- End / authorbox -->
-
-                        </div>
-                        <div class="testimonial-item">
-
-                            <!-- quote -->
-                            <blockquote class="quote">
-                                <p>Maecenas lorem ex, euismod eget pulvinar non, facilisis ut leo. Quisque placerat
-                                    purus in neque efficitur ornare. Nam at justo magna. Aliquam venenatis odio ante,
-                                    non euismod augue</p>
-                            </blockquote><!-- End / quote -->
-
-
-                            <!-- authorbox -->
-                            <div class="authorbox">
-                                <div class="authorbox__avartar" style="background-image: url(https://unsplash.it/800);">
-                                    <img src="https://unsplash.it/800" alt=""/></div>
-                                <div class="authorbox__info">
-                                    <h5 class="authorbox__name">Bruce Powell</h5>
-                                    <p class="authorbox__work">Developer</p>
-                                </div>
-                            </div><!-- End / authorbox -->
-
-                        </div>
-                        <div class="testimonial-item">
-
-                            <!-- quote -->
-                            <blockquote class="quote">
-                                <p>Integer placerat ullamcorper urna nec rhoncus. Sed velit justo, lacinia non sapien
-                                    imperdiet, sagittis fringilla risus. Nulla in est lobortis massa consectetur
-                                    scelerisque. Etiam</p>
-                            </blockquote><!-- End / quote -->
-
-
-                            <!-- authorbox -->
-                            <div class="authorbox">
-                                <div class="authorbox__avartar" style="background-image: url(https://unsplash.it/800);">
-                                    <img src="https://unsplash.it/800" alt=""/></div>
-                                <div class="authorbox__info">
-                                    <h5 class="authorbox__name">Maria Gutierrez</h5>
-                                    <p class="authorbox__work">Support</p>
-                                </div>
-                            </div><!-- End / authorbox -->
-
-                        </div>
-                        <div class="testimonial-item">
-
-                            <!-- quote -->
-                            <blockquote class="quote">
-                                <p>Mauris lacinia venenatis dolor sit amet viverra. Integer malesuada nulla neque. Sed
-                                    rutrum ligula eu sagittis volutpat. Aliquam erat volutpat. Praesent mattis non nulla
-                                    eget</p>
-                            </blockquote><!-- End / quote -->
-
-
-                            <!-- authorbox -->
-                            <div class="authorbox">
-                                <div class="authorbox__avartar" style="background-image: url(https://unsplash.it/800);">
-                                    <img src="https://unsplash.it/800" alt=""/></div>
-                                <div class="authorbox__info">
-                                    <h5 class="authorbox__name">Brittany Williams</h5>
-                                    <p class="authorbox__work">Developer</p>
-                                </div>
-                            </div><!-- End / authorbox -->
-
-                        </div>
-                    </div>
-                </div><!-- End / swiper swiper-container -->
 
             </div>
         </section>
@@ -713,7 +640,7 @@
 
         <!-- Section -->
         <section class="md-section md-skin-dark" id="id6"
-                 style="background-image:url(&quot;assets/img/bg/demo.jpg&quot;);padding-bottom:50px;">
+                 style="background-image:url(&quot;{% static 'assets/img/bg/demo.jpg' %}&quot;);padding-bottom:50px;">
             <div class="md-overlay"></div>
             <div class="container">
                 <div class="row">
@@ -744,16 +671,17 @@
 
                                             <!-- social-icon -->
                                             <a class="social-icon social-icon__style-03" href="#"><i
-                                                    class="social-icon__icon fa fa-twitter"></i>
+                                                    class="social-icon__icon fa fa-instagram"></i>
                                             </a><!-- End / social-icon -->
 
 
                                             <!-- social-icon -->
                                             <a class="social-icon social-icon__style-03" href="#"><i
-                                                    class="social-icon__icon fa fa-linkedin"></i>
+                                                    class="social-icon__icon fa fa-telegram"></i>
                                             </a><!-- End / social-icon -->
 
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -825,13 +753,13 @@
 
                                             <!-- social-icon -->
                                             <a class="social-icon social-icon__style-03" href="#"><i
-                                                    class="social-icon__icon fa fa-twitter"></i>
+                                                    class="social-icon__icon fa fa-instagram"></i>
                                             </a><!-- End / social-icon -->
 
 
                                             <!-- social-icon -->
                                             <a class="social-icon social-icon__style-03" href="#"><i
-                                                    class="social-icon__icon fa fa-linkedin"></i>
+                                                    class="social-icon__icon fa fa-telegram"></i>
                                             </a><!-- End / social-icon -->
 
                                         </div>
@@ -865,16 +793,17 @@
 
                                             <!-- social-icon -->
                                             <a class="social-icon social-icon__style-03" href="#"><i
-                                                    class="social-icon__icon fa fa-twitter"></i>
+                                                    class="social-icon__icon fa fa-instagram"></i>
                                             </a><!-- End / social-icon -->
 
 
                                             <!-- social-icon -->
                                             <a class="social-icon social-icon__style-03" href="#"><i
-                                                    class="social-icon__icon fa fa-linkedin"></i>
+                                                    class="social-icon__icon fa fa-telegram"></i>
                                             </a><!-- End / social-icon -->
 
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
