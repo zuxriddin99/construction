@@ -18,3 +18,18 @@ class Yangilik(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Xodim(models.Model):
+    name = models.CharField('Ism', max_length=100, blank=True)
+    surname = models.CharField('Familiya', max_length=100, blank=True)
+    speciality = models.CharField('Mutaxasisiligi', max_length=200, blank=True)
+    info = models.TextField('Ma\'lumot', blank=True)
+
+    class Meta:
+        verbose_name = 'Xodim'
+        verbose_name_plural = 'Xodilmlar'
+        db_table = 'xodimlar'
+
+    def __str__(self):
+        return self.name
