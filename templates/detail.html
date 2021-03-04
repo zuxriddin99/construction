@@ -1,0 +1,305 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Fonts-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/fonts/fontawesome/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/fonts/pe-icon/pe-icon.css' %}">
+    <!-- Vendors-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendors/bootstrap/grid.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendors/magnific-popup/magnific-popup.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendors/swiper/swiper.css' %}">
+    <!-- App & fonts-->
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Oswald:400,600|Playfair+Display:400i">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/main.css' %}">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="preload" id="preload">
+    <div class="cssload-spin-box"></div>
+</div><!-- End / preload -->
+<div class="page-wrap">
+    <header class="header header-fixheight header--fixed">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header-logo"><a>
+                    <img style="height: 40px" src="{% static 'assets/img/2.png' %}"
+                         alt=""/>
+                </a></div>
+
+                <!-- raising-nav -->
+                <nav class="raising-nav">
+
+                    <!-- raising-menu -->
+                    <ul class="raising-menu">
+                        <li class=""><a href="{% url 'main-page' %}">Bosh saxifa</a>
+                        </li>
+                        <li><a href="{% url 'main-page' %}#id2">Biz haqimizda</a>
+                        </li>
+                        <li><a href="{% url 'main-page' %}#id3">Yangiliklar</a>
+                        </li>
+                        <li><a href="{% url 'main-page' %}#id4">Galereya</a>
+                        </li>
+                        <li><a href="{% url 'main-page' %}#id5">testimonial</a>
+                        </li>
+                        <li><a href="{% url 'main-page' %}#id6">Bizning jamoa</a>
+                        </li>
+                        <li><a href="{% url 'main-page' %}#id7">Manzil</a>
+                        </li>
+                    </ul><!-- raising-menu -->
+
+                    <div class="navbar-toggle"><i class="fa fa-bars"></i></div>
+                </nav><!-- End / raising-nav -->
+
+                {#                <div class="btn-right">#}
+                {#                    <div class="search-btn"><i class="fa fa-search"></i></div>#}
+                {#                </div>#}
+                {#                <div class="searchbar">#}
+                {#                    <div class="searchbar__group"><span class="searchbar__addon"><i class="fa fa-search"></i></span>#}
+                {#                        <input class="searchbar__input" type="text" name="search" value="" placeholder="Search"/><span#}
+                {#                                class="searchbar__close"></span>#}
+                {#                    </div>#}
+                {#                </div>#}
+            </div>
+        </div>
+    </header><!-- End / header -->
+    <hero class="hero">
+
+        <!-- swiper swiper-container -->
+        <div class="swiper swiper-container">
+            <div style="height: 500px" class="swiper-wrapper">
+                <div class="hero__wrapper"
+                     style="background-image: url({% static 'assets/img/slider/Housewrap-installation-tips.jpg' %});">
+                    <div class="hero__inner">
+                        <div class="container">
+                            <h1 style="margin-left: 50%" class="hero__title">Yuqori sifat kafolati</h1>
+
+
+                            <!-- btn -->
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__wrapper" style="background-image: url({% static 'assets/img/slider/2.jpg' %});">
+                    <div class="hero__inner">
+                        <div class="container">
+                            <h1 class="hero__title">Malakali hodimlar</h1>
+
+
+                            <!-- btn -->
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__wrapper"
+                     style="background-image: url({% static 'assets/img/slider/construction-site-big.jpg' %});">
+                    <div class="hero__inner">
+                        <div class="container">
+                            {#                            <h1 class="hero__title">Sifatli qurilish mollari</h1>#}
+
+                            <!-- btn -->
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__wrapper" style="background-image: url({% static 'assets/img/slider/4.jpg' %});">
+                    <div class="hero__inner">
+                        <div class="container">
+                            <h1 class="hero__title">Ko'p yillik tajriba</h1>
+
+
+                            <!-- btn -->
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination-custom"></div>
+            <div class="swiper-button-custom">
+                <div class="swiper-button-prev-custom"><i class="fa fa-angle-left"></i></div>
+                <div class="swiper-button-next-custom"><i class="fa fa-angle-right"></i></div>
+            </div>
+        </div><!-- End / swiper swiper-container -->
+
+    </hero><!-- End / hero -->
+
+    <section class="md-section">
+        <div style="width: 98%" class="container">
+            <section class="md-section" style="background-color:#fff;padding:100px 0;">
+                <div style=" " class="container">
+                    <div class="row">
+                        <div class="sec-title sec-title__lg-title md-text-center">
+                            <h2 class="sec-title__title">{{ yangilik.title }}</h2><span
+                                class="sec-title__divider"></span>
+                        </div><!-- End / sec-title -->
+                        <div>
+                            {{ yangilik.full_info|safe }}
+                        </div>
+                        <div style="text-align: right; margin-top: 50px">
+                            {{ yangilik.created_dt }}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <footer class="footer-01 md-skin-dark">
+        <div class="footer-01__widget">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 ">
+
+                        <!-- widget -->
+                        <section class="widget">
+
+                            <!-- sec-title -->
+                            <div class="sec-title">
+                                <h2 class="sec-title__title">Biz haqimizda</h2><span class="sec-title__divider"></span>
+                            </div><!-- End / sec-title -->
+
+                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis a rerum ratione aliquam
+                                placeat labore nemo itaque voluptas laudantium consequuntur ut quam, aperiam harum
+                                ipsam?</p>
+                        </section><!-- End / widget -->
+
+                    </div>
+                    <div class="col-md-6 col-lg-3 ">
+
+                        <!-- widget -->
+                        {#                        <section class="widget">#}
+                        {##}
+                        {#                            <!-- sec-title -->#}
+                        {#                            <div class="sec-title">#}
+                        {#                                <h2 class="sec-title__title">tag</h2><span class="sec-title__divider"></span>#}
+                        {#                            </div><!-- End / sec-title -->#}
+                        {##}
+                        {##}
+                        {#                            <!-- widget-tag -->#}
+                        {#                            <div class="widget-tag"><a href="#">Dress</a><a href="#">Mini</a><a href="#">Skate#}
+                        {#                                Animal</a><a href="#">Lorem Ipsum</a><a href="#">Litterature</a><a#}
+                        {#                                    href="#">Foreign</a><a href="#">Dessert</a><a href="#">Food</a><a href="#">Litterature</a><a#}
+                        {#                                    href="#">Foreign</a><a href="#">Dessert</a><a href="#">Litterature</a><a href="#">Food</a>#}
+                        {#                            </div><!-- End /  widget-tag -->#}
+                        {##}
+                        {#                        </section><!-- End / widget -->#}
+
+                    </div>
+                    <div class="col-md-6 col-lg-3 ">
+
+                        <!-- widget -->
+                        {#                        <section class="widget">#}
+                        {##}
+                        {#                            <!-- sec-title -->#}
+                        {#                            <div class="sec-title">#}
+                        {#                                <h2 class="sec-title__title">flickr widget</h2><span class="sec-title__divider"></span>#}
+                        {#                            </div><!-- End / sec-title -->#}
+                        {##}
+                        {##}
+                        {#                            <!-- widget-gallery -->#}
+                        {#                            <div class="widget-gallery">#}
+                        {#                                <div class="widget-gallery__item"><a href="#"#}
+                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
+                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
+                        {#                                <div class="widget-gallery__item"><a href="#"#}
+                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
+                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
+                        {#                                <div class="widget-gallery__item"><a href="#"#}
+                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
+                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
+                        {#                                <div class="widget-gallery__item"><a href="#"#}
+                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
+                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
+                        {#                                <div class="widget-gallery__item"><a href="#"#}
+                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
+                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
+                        {#                                <div class="widget-gallery__item"><a href="#"#}
+                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
+                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
+                        {#                                <div class="widget-gallery__item"><a href="#"#}
+                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
+                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
+                        {#                                <div class="widget-gallery__item"><a href="#"#}
+                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
+                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
+                        {#                                <div class="widget-gallery__item"><a href="#"#}
+                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
+                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
+                        {#                            </div><!-- End /  widget-gallery -->#}
+                        {##}
+                        {#                        </section><!-- End / widget -->#}
+
+                    </div>
+                    <div class="col-lg-3 ">
+
+                        <!-- widget -->
+                        <section class="widget">
+
+                            <!-- sec-title -->
+                            <div class="sec-title">
+                                <h2 class="sec-title__title">working hours</h2><span class="sec-title__divider"></span>
+                            </div><!-- End / sec-title -->
+
+                            <p> Lorem ipsum dolor sit amet, consectetur</p>
+
+                            <!--  -->
+                            <div>
+                                <div class="widget-contact__item"><span class="widget-contact__title">Tel:</span>
+                                    <p class="widget-contact__text">+44 1632 960948</p>
+                                </div>
+                                <div class="widget-contact__item"><span class="widget-contact__title">email:</span>
+                                    <p class="widget-contact__text"><a href="#">info@awe7.com</a></p>
+                                </div>
+                                <div class="widget-contact__item"><span
+                                        class="widget-contact__title">Working Hours</span>
+                                    <p class="widget-contact__text">Mon - Sat: 9:00 - 18:00</p>
+                                </div>
+                            </div><!-- End /   -->
+
+                        </section><!-- End / widget -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- copyright-01 -->
+        <div class="copyright-01 md-text-center">
+            <div class="container">
+                <p class="copyright-01__copy">2021 &copy; Copyright Zuxriddin. All rights Reserved.</p>
+            </div>
+        </div><!-- End / copyright-01 -->
+
+    </footer><!-- End / footer-01 -->
+</div>
+</body>
+<script type="text/javascript" src="{% static 'assets/vendors/jquery/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/vendors/imagesloaded/imagesloaded.pkgd.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/vendors/isotope-layout/isotope.pkgd.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'assets/vendors/jquery.matchHeight/jquery.matchHeight.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/vendors/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/vendors/masonry-layout/masonry.pkgd.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/vendors/swiper/swiper.jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/vendors/jquery-one-page/jquery.nav.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/vendors/menu/menu.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/vendors/jquery.waypoints/jquery.waypoints.min.js' %}"></script>
+<!-- App-->
+<script type="text/javascript" src="{% static 'assets/js/main.js' %}"></script>
+</html>

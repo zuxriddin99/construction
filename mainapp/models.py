@@ -1,3 +1,4 @@
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 
 
@@ -5,11 +6,11 @@ from django.db import models
 
 class Yangilik(models.Model):
     title = models.CharField('Mavzu', max_length=250)
-    full_info = models.TextField('To\'lik ma\'lumot')
     short_info = models.TextField('Qisqacha ma\'lumot')
     image = models.ImageField('Surat', upload_to='news')
     created_dt = models.DateTimeField(auto_now_add=True)
     updated_dt = models.DateTimeField(auto_now=True)
+    full_info = RichTextUploadingField('To\'lik ma\'lumot')
 
     class Meta:
         verbose_name = 'Yangilik'
@@ -33,4 +34,3 @@ class Xodim(models.Model):
 
     def __str__(self):
         return self.name
-

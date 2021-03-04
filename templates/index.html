@@ -36,8 +36,10 @@
     <header class="header header-fixheight header--fixed">
         <div class="container">
             <div class="header__inner">
-                <div class="header-logo"><a href="home.html"><img src="{% static 'assets/img/logo_white.png' %}"
-                                                                  alt=""/></a></div>
+                <div class="header-logo"><a>
+                    <img style="height: 40px" src="{% static 'assets/img/2.png' %}"
+                         alt=""/>
+                </a></div>
 
                 <!-- raising-nav -->
                 <nav class="raising-nav">
@@ -157,12 +159,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 ">
-                        <h3 class="cta-02__title">Looking for a high quality constructor company for your project?</h3>
+                        <h3 class="cta-02__title">Loyixangizni amalga oshirish uchun qurilish tashkiloti
+                            izlayabsizmi?</h3>
                     </div>
                     <div class="col-lg-3  md-text-right">
 
                         <!-- btn -->
-                        <a class="btn btn-outline" href="#">Get a quote
+                        <a class="btn btn-outline" href="#id7">Xa Albatta
                         </a><!-- End / btn -->
 
                     </div>
@@ -234,114 +237,31 @@
 
                         <!-- sec-title -->
                         <div class="sec-title sec-title__lg-title md-text-center">
-                            <h2 class="sec-title__title">Our services</h2><span class="sec-title__divider"></span>
+                            <h2 class="sec-title__title">Yangiliklar</h2><span class="sec-title__divider"></span>
                         </div><!-- End / sec-title -->
 
                     </div>
                 </div>
                 <div class="row row-eq-height">
-                    <div class="col-sm-6 col-md-6 col-lg-4 ">
 
-                        <!-- services -->
-                        <div class="services">
-                            <div class="services__img"><img src="{% static 'assets/img/service/1.jpg' %}" alt=""/></div>
-                            <h2 class="services__title"><a href="#">General Contracting</a></h2>
-                            <div class="services__desc">Curabitur elementum urna augue, eu porta purus gravida in. Cras
-                                consectetur, lorem a cursus vestibulum, ligula purus
-                            </div>
+                    {% for yangilik in yangiliklar %}
+                        <div class="col-sm-6 col-md-6 col-lg-4 ">
+                            <div class="services">
+                                <div class="services__img"><img src="{% static 'assets/img/service/1.jpg' %}" alt=""/>
+                                </div>
+                                <h2 class="services__title"><a href="#">General Contracting</a></h2>
+                                <div class="services__desc">Curabitur elementum urna augue, eu porta purus gravida in.
+                                    Cras
+                                    consectetur, lorem a cursus vestibulum, ligula purus
+                                </div>
 
-                            <!-- btn -->
-                            <a class="btn btn btn-primary btn-custom" href="service-single.html">read more
-                            </a><!-- End / btn -->
+                                <!-- btn -->
+                                <a class="btn btn btn-primary btn-custom" href="service-single.html">read more
+                                </a><!-- End / btn -->
 
-                        </div><!-- End / services -->
-
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-4 ">
-
-                        <!-- services -->
-                        <div class="services">
-                            <div class="services__img"><img src="{% static 'assets/img/service/2.jpg' %}" alt=""/></div>
-                            <h2 class="services__title"><a href="#">Concept and Design</a></h2>
-                            <div class="services__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                                laoreet ut lacus a tincidunt. Quisque luctus nibh augue, non
-                            </div>
-
-                            <!-- btn -->
-                            <a class="btn btn btn-primary btn-custom" href="service-single.html">read more
-                            </a><!-- End / btn -->
-
-                        </div><!-- End / services -->
-
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-4 ">
-
-                        <!-- services -->
-                        <div class="services">
-                            <div class="services__img"><img src="{% static 'assets/img/service/3.jpg' %}" alt=""/></div>
-                            <h2 class="services__title"><a href="#">Metal Roofing</a></h2>
-                            <div class="services__desc">Duis porttitor libero ac egestas euismod. Maecenas quis felis
-                                turpis. Nulla quis turpis sed augue egestas dapibus vel at
-                            </div>
-
-                            <!-- btn -->
-                            <a class="btn btn btn-primary btn-custom" href="service-single.html">read more
-                            </a><!-- End / btn -->
-
-                        </div><!-- End / services -->
-
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-4 ">
-
-                        <!-- services -->
-                        <div class="services">
-                            <div class="services__img"><img src="{% static 'assets/img/service/4.jpg' %}" alt=""/></div>
-                            <h2 class="services__title"><a href="#">Construction Consultant</a></h2>
-                            <div class="services__desc">Nam elit ligula, egestas et ornare non, viverra eu justo.
-                                Aliquam ornare lectus ut pharetra dictum. Aliquam erat
-                            </div>
-
-                            <!-- btn -->
-                            <a class="btn btn btn-primary btn-custom" href="service-single.html">read more
-                            </a><!-- End / btn -->
-
-                        </div><!-- End / services -->
-
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-4 ">
-
-                        <!-- services -->
-                        <div class="services">
-                            <div class="services__img"><img src="{% static 'assets/img/service/5.jpg' %}" alt=""/></div>
-                            <h2 class="services__title"><a href="#">Construction Consultant</a></h2>
-                            <div class="services__desc">Suspendisse ac elit vitae est lacinia interdum eu sit amet
-                                mauris. Phasellus aliquam nisi sit amet libero mattis ornare.
-                            </div>
-
-                            <!-- btn -->
-                            <a class="btn btn btn-primary btn-custom" href="service-single.html">read more
-                            </a><!-- End / btn -->
-
-                        </div><!-- End / services -->
-
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-4 ">
-
-                        <!-- services -->
-                        <div class="services">
-                            <div class="services__img"><img src="{% static 'assets/img/service/6.jpg' %}" alt=""/></div>
-                            <h2 class="services__title"><a href="#">General Builder</a></h2>
-                            <div class="services__desc">Integer placerat ullamcorper urna nec rhoncus. Sed velit justo,
-                                lacinia non sapien imperdiet, sagittis fringilla risus.
-                            </div>
-
-                            <!-- btn -->
-                            <a class="btn btn btn-primary btn-custom" href="service-single.html">read more
-                            </a><!-- End / btn -->
-
-                        </div><!-- End / services -->
-
-                    </div>
+                            </div><!-- End / services -->
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
@@ -356,7 +276,7 @@
 
                         <!-- sec-title -->
                         <div class="sec-title sec-title__lg-title md-text-center">
-                            <h2 class="sec-title__title">Gallery</h2><span class="sec-title__divider"></span>
+                            <h2 class="sec-title__title">Galereya</h2><span class="sec-title__divider"></span>
                         </div><!-- End / sec-title -->
 
                     </div>
@@ -602,7 +522,7 @@
 
 
         <!-- Section -->
-        <div class="sec-title sec-title__lg-title md-text-center">
+        <div style="margin-top: 40px" class="sec-title sec-title__lg-title md-text-center">
             <h2 class="sec-title__title">Bizning ishlarimiz</h2><span
                 class="sec-title__divider"></span>
         </div>
@@ -643,7 +563,6 @@
             </div>
         </section>
         <!-- End / Section -->
-
 
 
         <!-- Section -->
@@ -838,97 +757,98 @@
 
                     <!-- sec-title -->
                     <div class="sec-title sec-title__lg-title md-text-center">
-                        <h2 class="sec-title__title">Contact us</h2><span class="sec-title__divider"></span>
+                        <h2 class="sec-title__title">Biz bilan bog'lanish</h2><span class="sec-title__divider"></span>
                     </div><!-- End / sec-title -->
 
                 </div>
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-9  col-lg-push-3">
+                    <div class="col-lg-12">
                         <div class="main-content">
                             <div class="row">
-                                <div class="col-lg-6 ">
+                                <div class="col-lg-4 ">
                                     <form class="contact-form">
 
                                         <!-- form-item -->
                                         <div class="form-item">
-                                            <input class="form-control" type="text" name="input" placeholder="name"/>
+                                            <input class="form-control" type="text" name="input"
+                                                   placeholder="Ismingiz"/>
                                         </div><!-- End / form-item -->
 
 
                                         <!-- form-item -->
-                                        <div class="form-item">
-                                            <input class="form-control" type="text" name="input" placeholder="email"/>
-                                        </div><!-- End / form-item -->
+                                        {#                                        <div class="form-item">#}
+                                        {#                                            <input class="form-control" type="text" name="input" placeholder="email"/>#}
+                                        {#                                        </div><!-- End / form-item -->#}
 
 
                                         <!-- form-item -->
                                         <div class="form-item">
-                                            <input class="form-control" type="text" name="input" placeholder="phone"/>
+                                            <input class="form-control" type="text" name="input" placeholder="Telefon"/>
                                         </div><!-- End / form-item -->
 
 
                                         <!-- form-item -->
-                                        <div class="form-item">
-                                            <input class="form-control" type="text" name="input" placeholder="subject"/>
-                                        </div><!-- End / form-item -->
+                                        {#                                        <div class="form-item">#}
+                                        {#                                            <input class="form-control" type="text" name="input" placeholder="subject"/>#}
+                                        {#                                        </div><!-- End / form-item -->#}
 
 
                                         <!-- form-item -->
                                         <div class="form-item">
-                                            <textarea name="message" placeholder="Message"
+                                            <textarea name="message" placeholder="Xabar"
                                                       style="height: 150px;"></textarea>
                                         </div><!-- End / form-item -->
 
-                                        <button class="btn btn-primary btn-round mb-30" type="submit">Send message
+                                        <button class="btn btn-primary btn-round mb-30" type="submit">Yuborish
                                         </button>
                                     </form>
                                 </div>
-                                <div class="col-lg-6 ">
+                                <div class="col-lg-8">
                                     <div class="contact-gmap">
                                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13251.372477946246!2d151.20128974429977!3d-33.86793372362399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae401e8b983f%3A0x5017d681632ccc0!2sSydney+NSW%2C+Australia!5e0!3m2!1sen!2s!4v1450842593491"
-                                                width="100%" height="500" frameborder="0" style="border:0"
+                                                width="100%" height="404" frameborder="0" style="border:0"
                                                 allowfullscreen></iframe>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3  col-lg-pull-9">
-                        <div class="sidebar">
-
-                            <!-- widget -->
-                            <section class="widget">
-
-                                <!-- sec-title -->
-                                <div class="sec-title">
-                                    <h2 class="sec-title__title">working hours</h2><span
-                                        class="sec-title__divider"></span>
-                                </div><!-- End / sec-title -->
-
-                                <p class="mb-30">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos ad sunt
-                                    est. Eaque odit, et nihil saepe. Eveniet autem, sit quisquam iusto soluta assumenda
-                                    impedit possimus nesciunt fugiat aut in.</p>
-
-                                <!--  -->
-                                <div>
-                                    <div class="widget-contact__item"><span class="widget-contact__title">Tel:</span>
-                                        <p class="widget-contact__text">+44 1632 960422</p>
-                                    </div>
-                                    <div class="widget-contact__item"><span class="widget-contact__title">email:</span>
-                                        <p class="widget-contact__text"><a href="#">info@awe7.com</a></p>
-                                    </div>
-                                    <div class="widget-contact__item"><span
-                                            class="widget-contact__title">Working Hours</span>
-                                        <p class="widget-contact__text">Mon - Sat: 9:00 - 18:00</p>
-                                    </div>
-                                </div><!-- End /   -->
-
-                            </section><!-- End / widget -->
-
-                        </div>
-                    </div>
+                    {#                    <div class="col-lg-3  col-lg-pull-9">#}
+                    {#                        <div class="sidebar">#}
+                    {##}
+                    {#                            <!-- widget -->#}
+                    {#                            <section class="widget">#}
+                    {##}
+                    {#                                <!-- sec-title -->#}
+                    {#                                <div class="sec-title">#}
+                    {#                                    <h2 class="sec-title__title">working hours</h2><span#}
+                    {#                                        class="sec-title__divider"></span>#}
+                    {#                                </div><!-- End / sec-title -->#}
+                    {##}
+                    {#                                <p class="mb-30">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos ad sunt#}
+                    {#                                    est. Eaque odit, et nihil saepe. Eveniet autem, sit quisquam iusto soluta assumenda#}
+                    {#                                    impedit possimus nesciunt fugiat aut in.</p>#}
+                    {##}
+                    {#                                <!--  -->#}
+                    {#                                <div>#}
+                    {#                                    <div class="widget-contact__item"><span class="widget-contact__title">Tel:</span>#}
+                    {#                                        <p class="widget-contact__text">+44 1632 960422</p>#}
+                    {#                                    </div>#}
+                    {#                                    <div class="widget-contact__item"><span class="widget-contact__title">email:</span>#}
+                    {#                                        <p class="widget-contact__text"><a href="#">info@awe7.com</a></p>#}
+                    {#                                    </div>#}
+                    {#                                    <div class="widget-contact__item"><span#}
+                    {#                                            class="widget-contact__title">Working Hours</span>#}
+                    {#                                        <p class="widget-contact__text">Mon - Sat: 9:00 - 18:00</p>#}
+                    {#                                    </div>#}
+                    {#                                </div><!-- End /   -->#}
+                    {##}
+                    {#                            </section><!-- End / widget -->#}
+                    {##}
+                    {#                        </div>#}
+                    {#                    </div>#}
                 </div>
             </div>
         </section>
@@ -949,7 +869,7 @@
 
                             <!-- sec-title -->
                             <div class="sec-title">
-                                <h2 class="sec-title__title">about us</h2><span class="sec-title__divider"></span>
+                                <h2 class="sec-title__title">Biz haqimizda</h2><span class="sec-title__divider"></span>
                             </div><!-- End / sec-title -->
 
                             <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis a rerum ratione aliquam
@@ -961,67 +881,67 @@
                     <div class="col-md-6 col-lg-3 ">
 
                         <!-- widget -->
-                        <section class="widget">
-
-                            <!-- sec-title -->
-                            <div class="sec-title">
-                                <h2 class="sec-title__title">tag</h2><span class="sec-title__divider"></span>
-                            </div><!-- End / sec-title -->
-
-
-                            <!-- widget-tag -->
-                            <div class="widget-tag"><a href="#">Dress</a><a href="#">Mini</a><a href="#">Skate
-                                Animal</a><a href="#">Lorem Ipsum</a><a href="#">Litterature</a><a
-                                    href="#">Foreign</a><a href="#">Dessert</a><a href="#">Food</a><a href="#">Litterature</a><a
-                                    href="#">Foreign</a><a href="#">Dessert</a><a href="#">Litterature</a><a href="#">Food</a>
-                            </div><!-- End /  widget-tag -->
-
-                        </section><!-- End / widget -->
+                        {#                        <section class="widget">#}
+                        {##}
+                        {#                            <!-- sec-title -->#}
+                        {#                            <div class="sec-title">#}
+                        {#                                <h2 class="sec-title__title">tag</h2><span class="sec-title__divider"></span>#}
+                        {#                            </div><!-- End / sec-title -->#}
+                        {##}
+                        {##}
+                        {#                            <!-- widget-tag -->#}
+                        {#                            <div class="widget-tag"><a href="#">Dress</a><a href="#">Mini</a><a href="#">Skate#}
+                        {#                                Animal</a><a href="#">Lorem Ipsum</a><a href="#">Litterature</a><a#}
+                        {#                                    href="#">Foreign</a><a href="#">Dessert</a><a href="#">Food</a><a href="#">Litterature</a><a#}
+                        {#                                    href="#">Foreign</a><a href="#">Dessert</a><a href="#">Litterature</a><a href="#">Food</a>#}
+                        {#                            </div><!-- End /  widget-tag -->#}
+                        {##}
+                        {#                        </section><!-- End / widget -->#}
 
                     </div>
                     <div class="col-md-6 col-lg-3 ">
 
                         <!-- widget -->
-                        <section class="widget">
-
-                            <!-- sec-title -->
-                            <div class="sec-title">
-                                <h2 class="sec-title__title">flickr widget</h2><span class="sec-title__divider"></span>
-                            </div><!-- End / sec-title -->
-
-
-                            <!-- widget-gallery -->
-                            <div class="widget-gallery">
-                                <div class="widget-gallery__item"><a href="#"
-                                                                     style="background-image: url('http://placehold.it/400x400');"><img
-                                        src="http://placehold.it/400x400" alt=""/></a></div>
-                                <div class="widget-gallery__item"><a href="#"
-                                                                     style="background-image: url('http://placehold.it/400x400');"><img
-                                        src="http://placehold.it/400x400" alt=""/></a></div>
-                                <div class="widget-gallery__item"><a href="#"
-                                                                     style="background-image: url('http://placehold.it/400x400');"><img
-                                        src="http://placehold.it/400x400" alt=""/></a></div>
-                                <div class="widget-gallery__item"><a href="#"
-                                                                     style="background-image: url('http://placehold.it/400x400');"><img
-                                        src="http://placehold.it/400x400" alt=""/></a></div>
-                                <div class="widget-gallery__item"><a href="#"
-                                                                     style="background-image: url('http://placehold.it/400x400');"><img
-                                        src="http://placehold.it/400x400" alt=""/></a></div>
-                                <div class="widget-gallery__item"><a href="#"
-                                                                     style="background-image: url('http://placehold.it/400x400');"><img
-                                        src="http://placehold.it/400x400" alt=""/></a></div>
-                                <div class="widget-gallery__item"><a href="#"
-                                                                     style="background-image: url('http://placehold.it/400x400');"><img
-                                        src="http://placehold.it/400x400" alt=""/></a></div>
-                                <div class="widget-gallery__item"><a href="#"
-                                                                     style="background-image: url('http://placehold.it/400x400');"><img
-                                        src="http://placehold.it/400x400" alt=""/></a></div>
-                                <div class="widget-gallery__item"><a href="#"
-                                                                     style="background-image: url('http://placehold.it/400x400');"><img
-                                        src="http://placehold.it/400x400" alt=""/></a></div>
-                            </div><!-- End /  widget-gallery -->
-
-                        </section><!-- End / widget -->
+                        {#                        <section class="widget">#}
+                        {##}
+                        {#                            <!-- sec-title -->#}
+                        {#                            <div class="sec-title">#}
+                        {#                                <h2 class="sec-title__title">flickr widget</h2><span class="sec-title__divider"></span>#}
+                        {#                            </div><!-- End / sec-title -->#}
+                        {##}
+                        {##}
+                        {#                            <!-- widget-gallery -->#}
+                        {#                            <div class="widget-gallery">#}
+                        {#                                <div class="widget-gallery__item"><a href="#"#}
+                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
+                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
+                        {#                                <div class="widget-gallery__item"><a href="#"#}
+                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
+                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
+                        {#                                <div class="widget-gallery__item"><a href="#"#}
+                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
+                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
+                        {#                                <div class="widget-gallery__item"><a href="#"#}
+                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
+                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
+                        {#                                <div class="widget-gallery__item"><a href="#"#}
+                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
+                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
+                        {#                                <div class="widget-gallery__item"><a href="#"#}
+                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
+                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
+                        {#                                <div class="widget-gallery__item"><a href="#"#}
+                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
+                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
+                        {#                                <div class="widget-gallery__item"><a href="#"#}
+                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
+                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
+                        {#                                <div class="widget-gallery__item"><a href="#"#}
+                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
+                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
+                        {#                            </div><!-- End /  widget-gallery -->#}
+                        {##}
+                        {#                        </section><!-- End / widget -->#}
 
                     </div>
                     <div class="col-lg-3 ">
@@ -1060,7 +980,7 @@
         <!-- copyright-01 -->
         <div class="copyright-01 md-text-center">
             <div class="container">
-                <p class="copyright-01__copy">2018 &copy; Copyright Awe7. All rights Reserved.</p>
+                <p class="copyright-01__copy">2021 &copy; Copyright Zuxriddin. All rights Reserved.</p>
             </div>
         </div><!-- End / copyright-01 -->
 
