@@ -54,11 +54,11 @@
                         </li>
                         <li><a href="#id4">Galereya</a>
                         </li>
-                        <li><a href="#id5">testimonial</a>
+                        <li><a href="#id5">Bizning ishlarimiz</a>
                         </li>
                         <li><a href="#id6">Bizning jamoa</a>
                         </li>
-                        <li><a href="#id7">Manzil</a>
+                        <li><a href="#id7">Biz bilan bog'lanish</a>
                         </li>
                     </ul><!-- raising-menu -->
 
@@ -175,57 +175,56 @@
 
 
         <!-- Section -->
-        <section class="md-section" id="id2" style="background-color:#fff;padding:60px 0;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 ">
-                        <div class="mb-30">
+        {% for foo in korxona %}
+            <section class="md-section" id="id2" style="background-color:#fff;padding:60px 0;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 ">
+                            <div class="mb-30">
 
-                            <!-- sec-title -->
-                            <div class="sec-title sec-title__lg-title">
-                                <h2 class="sec-title__title">About <span>The Raising</span></h2><span
-                                    class="sec-title__divider"></span>
-                            </div><!-- End / sec-title -->
+                                <!-- sec-title -->
+                                <div class="sec-title sec-title__lg-title">
+                                    <h2 class="sec-title__title">Korxonamiz <span>xaqida</span></h2><span
+                                        class="sec-title__divider"></span>
+                                </div><!-- End / sec-title -->
 
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                printer took a galley of type and scrambled it to make a type specimen book.</p><br>
-                            <p>It has survived not only five centuries, but also the leap into electronic typesetting,
-                                remaining essentially unchanged. It was popularised in the 1960s with the release of
-                                Letraset sheets containing Lorem Ipsum passages,</p><br><br><a
-                                class="btn btn-primary btn-outline" href="#">More about us</a>
+                                <p>{{ foo.short_info|safe }}</p>
+
+                                <br><br><a
+                                    class="btn btn-primary btn-outline" href="{% url 'korxona' foo.id %}">Batafsil</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 ">
+
+                            <!-- about -->
+                            <div class="about"><img src="{{ foo.main_image.url }}" alt=""/>
+
+                                <!-- quote-02 -->
+                                <blockquote class="quote-02 about-quote">
+                                    <p class="quote-02__text">{{ foo.quote_index_page }}</p>
+
+                                    <!-- authorbox -->
+                                    <div class="authorbox">
+                                        <div class="authorbox__avartar"
+                                             style="background-image: url('{{ foo.quote_image.url }}');"><img
+                                                src="{{ foo.quote_image.url }}" alt=""/></div>
+                                        <div class="authorbox__info">
+                                            <h5 class="authorbox__name">{{ foo.quote_name }}</h5>
+                                            <p class="authorbox__work">{{ foo.quote_job }}</p>
+                                        </div>
+                                    </div><!-- End / authorbox -->
+
+                                </blockquote><!-- End / quote-02 -->
+
+                            </div><!-- End / about -->
+
                         </div>
                     </div>
-                    <div class="col-lg-6 ">
-
-                        <!-- about -->
-                        <div class="about"><img src="{% static 'assets/img/about/2.jpg' %}" alt=""/>
-
-                            <!-- quote-02 -->
-                            <blockquote class="quote-02 about-quote">
-                                <p class="quote-02__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                                    laoreet ut lacus a tincidunt. Quisque luctus nibh augue, non ultrices arcu molestie
-                                    in. Integer finibus dolor lorem, tempor pretium lectus</p>
-
-                                <!-- authorbox -->
-                                <div class="authorbox">
-                                    <div class="authorbox__avartar"
-                                         style="background-image: url(https://unsplash.it/800);"><img
-                                            src="https://unsplash.it/800" alt=""/></div>
-                                    <div class="authorbox__info">
-                                        <h5 class="authorbox__name">Maria Gutierrez</h5>
-                                        <p class="authorbox__work">Designer</p>
-                                    </div>
-                                </div><!-- End / authorbox -->
-
-                            </blockquote><!-- End / quote-02 -->
-
-                        </div><!-- End / about -->
-
-                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        {% endfor %}
+
+
         <!-- End / Section -->
 
 
@@ -247,16 +246,14 @@
                     {% for yangilik in yangiliklar %}
                         <div class="col-sm-6 col-md-6 col-lg-4 ">
                             <div class="services">
-                                <div class="services__img"><img src="{% static 'assets/img/service/1.jpg' %}" alt=""/>
+                                <div class="services__img"><img src="{{ yangilik.image.url }}" alt=""/>
                                 </div>
-                                <h2 class="services__title"><a href="#">General Contracting</a></h2>
-                                <div class="services__desc">Curabitur elementum urna augue, eu porta purus gravida in.
-                                    Cras
-                                    consectetur, lorem a cursus vestibulum, ligula purus
+                                <h2 class="services__title"><a href="#">{{ yangilik.title }}</a></h2>
+                                <div class="services__desc">{{ yangilik.short_info }}
                                 </div>
 
                                 <!-- btn -->
-                                <a class="btn btn btn-primary btn-custom" href="service-single.html">read more
+                                <a class="btn btn btn-primary btn-custom" href="{% url 'yangilik' yangilik.id %}">Batafsil
                                 </a><!-- End / btn -->
 
                             </div><!-- End / services -->
@@ -530,30 +527,32 @@
 
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-3 ">
+                    {% for foo in bizning_ishlar %}
+                        <div class="col-sm-6 col-md-6 col-lg-3 ">
 
-                        <!-- team -->
-                        <div class="team">
-                            <a href="#">
-                                <div class="team__img"><img src="{% static 'assets/img/team/1.jpg' %}" alt=""/>
-                                    <!-- End / sec-title -->
-                                    <div class="team__overlay">
-                                        <div class="md-tb">
+                            <!-- ishlar -->
+                            <div class="team">
+                                <a href="#">
+                                    <div class="team__img"><img src="{{ foo.image.url }}" alt=""/>
+                                        <!-- End / sec-title -->
+                                        <div class="team__overlay">
+                                            <div class="md-tb">
 
 
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="team__body">
-                            <div class="team__user">
-                                <h4 class="team__name">Sean Coleman</h4><span class="team__work">Photography</span>
+                                </a>
                             </div>
-                            <p class="team__text">Nam elit ligula, egestas et ornare non, viverra eu justo. Aliquam
-                                ornare lectus ut</p>
-                        </div>
-                    </div><!-- End / team -->
+                            <div class="team__body">
+                                <div class="team__user">
+                                    <h4 class="team__name">{{ foo.title }}</h4>
+                                </div>
+                                <p class="team__text">{{ foo.short_info }}</p>
+                            </div>
+                        </div><!-- End / ishlar -->
+                    {% endfor %}
+
 
                 </div>
 
@@ -565,7 +564,7 @@
         <!-- End / Section -->
 
 
-        <!-- Section -->
+        <!-- Jamoa -->
         <section class="md-section md-skin-dark" id="id6"
                  style="background-image:url(&quot;{% static 'assets/img/bg/demo.jpg' %}&quot;);padding-bottom:50px;">
             <div class="md-overlay"></div>
@@ -580,177 +579,146 @@
 
                     </div>
                 </div>
+                {#            Xodimlar#}
                 <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-3 ">
+                    {% for xodim in xodimlar %}
+                        <div class="col-sm-6 col-md-6 col-lg-3 ">
+                            <!-- team -->
+                            <div class="team">
+                                <div class="team__img"><img src="{{ xodim.image.url }}" alt=""/>
+                                    <div class="team__overlay">
+                                        <div class="md-tb">
+                                            <div class="md-tb__cell md-text-center">
 
-                        <!-- team -->
-                        <div class="team">
-                            <div class="team__img"><img src="{% static 'assets/img/team/1.jpg' %}" alt=""/>
-                                <div class="team__overlay">
-                                    <div class="md-tb">
-                                        <div class="md-tb__cell md-text-center">
-
-                                            <!-- social-icon -->
-                                            <a class="social-icon social-icon__style-03" href="#"><i
-                                                    class="social-icon__icon fa fa-facebook"></i>
-                                            </a><!-- End / social-icon -->
-
-
-                                            <!-- social-icon -->
-                                            <a class="social-icon social-icon__style-03" href="#"><i
-                                                    class="social-icon__icon fa fa-instagram"></i>
-                                            </a><!-- End / social-icon -->
+                                                <!-- social-icon -->
+                                                <a class="social-icon social-icon__style-03"
+                                                   href="http://www.facebook.com/{{ xodim.facebook }}"><i
+                                                        class="social-icon__icon fa fa-facebook"></i>
+                                                </a><!-- End / social-icon -->
 
 
-                                            <!-- social-icon -->
-                                            <a class="social-icon social-icon__style-03" href="#"><i
-                                                    class="social-icon__icon fa fa-telegram"></i>
-                                            </a><!-- End / social-icon -->
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="team__body">
-                                <div class="team__user">
-                                    <h4 class="team__name">Sean Coleman</h4><span class="team__work">Photography</span>
-                                </div>
-                                <p class="team__text">Nam elit ligula, egestas et ornare non, viverra eu justo. Aliquam
-                                    ornare lectus ut</p>
-                            </div>
-                        </div><!-- End / team -->
-
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-3 ">
-
-                        <!-- team -->
-                        <div class="team">
-                            <div class="team__img"><img src="{% static 'assets/img/team/2.jpg' %}" alt=""/>
-                                <div class="team__overlay">
-                                    <div class="md-tb">
-                                        <div class="md-tb__cell md-text-center">
-
-                                            <!-- social-icon -->
-                                            <a class="social-icon social-icon__style-03" href="#"><i
-                                                    class="social-icon__icon fa fa-facebook"></i>
-                                            </a><!-- End / social-icon -->
+                                                <!-- social-icon -->
+                                                <a class="social-icon social-icon__style-03"
+                                                   href="https://www.instagram.com/{{ xodim.insta }}/"><i
+                                                        class="social-icon__icon fa fa-instagram"></i>
+                                                </a><!-- End / social-icon -->
 
 
-                                            <!-- social-icon -->
-                                            <a class="social-icon social-icon__style-03" href="#"><i
-                                                    class="social-icon__icon fa fa-twitter"></i>
-                                            </a><!-- End / social-icon -->
+                                                <!-- social-icon -->
+                                                <a class="social-icon social-icon__style-03"
+                                                   href="https://telegram.me/{{ xodim.telegram }}"><i
+                                                        class="social-icon__icon fa fa-telegram"></i>
+                                                </a><!-- End / social-icon -->
 
-
-                                            <!-- social-icon -->
-                                            <a class="social-icon social-icon__style-03" href="#"><i
-                                                    class="social-icon__icon fa fa-linkedin"></i>
-                                            </a><!-- End / social-icon -->
+                                            </div>
 
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="team__body">
-                                <div class="team__user">
-                                    <h4 class="team__name">Daniel Ramirez</h4><span
-                                        class="team__work">CEO &amp; Founder</span>
+                                <div class="team__body">
+                                    <div class="team__user">
+                                        <h4 class="team__name">{{ xodim.name }} {{ xodim.surname }}</h4><span
+                                            class="team__work">{{ xodim.speciality }}</span>
+                                    </div>
+                                    <p class="team__text">{{ xodim.info }}</p>
                                 </div>
-                                <p class="team__text">Etiam non varius justo, vel tempor mi. Nulla facilisi. Fusce at
-                                    tortor arcu. Suspendisse</p>
-                            </div>
-                        </div><!-- End / team -->
+                            </div><!-- End / team -->
 
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-3 ">
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3 ">
+                            <!-- team -->
+                            <div class="team">
+                                <div class="team__img"><img src="{{ xodim.image.url }}" alt=""/>
+                                    <div class="team__overlay">
+                                        <div class="md-tb">
+                                            <div class="md-tb__cell md-text-center">
 
-                        <!-- team -->
-                        <div class="team">
-                            <div class="team__img"><img src="{% static 'assets/img/team/3.jpg' %}" alt=""/>
-                                <div class="team__overlay">
-                                    <div class="md-tb">
-                                        <div class="md-tb__cell md-text-center">
-
-                                            <!-- social-icon -->
-                                            <a class="social-icon social-icon__style-03" href="#"><i
-                                                    class="social-icon__icon fa fa-facebook"></i>
-                                            </a><!-- End / social-icon -->
+                                                <!-- social-icon -->
+                                                <a class="social-icon social-icon__style-03"
+                                                   href="http://www.facebook.com/{{ xodim.facebook }}"><i
+                                                        class="social-icon__icon fa fa-facebook"></i>
+                                                </a><!-- End / social-icon -->
 
 
-                                            <!-- social-icon -->
-                                            <a class="social-icon social-icon__style-03" href="#"><i
-                                                    class="social-icon__icon fa fa-instagram"></i>
-                                            </a><!-- End / social-icon -->
+                                                <!-- social-icon -->
+                                                <a class="social-icon social-icon__style-03"
+                                                   href="https://www.instagram.com/{{ xodim.insta }}/"><i
+                                                        class="social-icon__icon fa fa-instagram"></i>
+                                                </a><!-- End / social-icon -->
 
 
-                                            <!-- social-icon -->
-                                            <a class="social-icon social-icon__style-03" href="#"><i
-                                                    class="social-icon__icon fa fa-telegram"></i>
-                                            </a><!-- End / social-icon -->
+                                                <!-- social-icon -->
+                                                <a class="social-icon social-icon__style-03"
+                                                   href="https://telegram.me/{{ xodim.telegram }}"><i
+                                                        class="social-icon__icon fa fa-telegram"></i>
+                                                </a><!-- End / social-icon -->
+
+                                            </div>
 
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="team__body">
-                                <div class="team__user">
-                                    <h4 class="team__name">Sean Coleman</h4><span class="team__work">Photography</span>
+                                <div class="team__body">
+                                    <div class="team__user">
+                                        <h4 class="team__name">{{ xodim.name }} {{ xodim.surname }}</h4><span
+                                            class="team__work">{{ xodim.speciality }}</span>
+                                    </div>
+                                    <p class="team__text">{{ xodim.info }}</p>
                                 </div>
-                                <p class="team__text">Etiam non varius justo, vel tempor mi. Nulla facilisi. Fusce at
-                                    tortor arcu. Suspendisse</p>
-                            </div>
-                        </div><!-- End / team -->
+                            </div><!-- End / team -->
 
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-3 ">
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-3 ">
+                            <!-- team -->
+                            <div class="team">
+                                <div class="team__img"><img src="{{ xodim.image.url }}" alt=""/>
+                                    <div class="team__overlay">
+                                        <div class="md-tb">
+                                            <div class="md-tb__cell md-text-center">
 
-                        <!-- team -->
-                        <div class="team">
-                            <div class="team__img"><img src="{% static 'assets/img/team/4.jpg' %}" alt=""/>
-                                <div class="team__overlay">
-                                    <div class="md-tb">
-                                        <div class="md-tb__cell md-text-center">
-
-                                            <!-- social-icon -->
-                                            <a class="social-icon social-icon__style-03" href="#"><i
-                                                    class="social-icon__icon fa fa-facebook"></i>
-                                            </a><!-- End / social-icon -->
+                                                <!-- social-icon -->
+                                                <a class="social-icon social-icon__style-03"
+                                                   href="http://www.facebook.com/{{ xodim.facebook }}"><i
+                                                        class="social-icon__icon fa fa-facebook"></i>
+                                                </a><!-- End / social-icon -->
 
 
-                                            <!-- social-icon -->
-                                            <a class="social-icon social-icon__style-03" href="#"><i
-                                                    class="social-icon__icon fa fa-instagram"></i>
-                                            </a><!-- End / social-icon -->
+                                                <!-- social-icon -->
+                                                <a class="social-icon social-icon__style-03"
+                                                   href="https://www.instagram.com/{{ xodim.insta }}/"><i
+                                                        class="social-icon__icon fa fa-instagram"></i>
+                                                </a><!-- End / social-icon -->
 
 
-                                            <!-- social-icon -->
-                                            <a class="social-icon social-icon__style-03" href="#"><i
-                                                    class="social-icon__icon fa fa-telegram"></i>
-                                            </a><!-- End / social-icon -->
+                                                <!-- social-icon -->
+                                                <a class="social-icon social-icon__style-03"
+                                                   href="https://telegram.me/{{ xodim.telegram }}"><i
+                                                        class="social-icon__icon fa fa-telegram"></i>
+                                                </a><!-- End / social-icon -->
+
+                                            </div>
 
                                         </div>
-
                                     </div>
                                 </div>
-                            </div>
-                            <div class="team__body">
-                                <div class="team__user">
-                                    <h4 class="team__name">Bryan Ryan</h4><span class="team__work">Designer</span>
+                                <div class="team__body">
+                                    <div class="team__user">
+                                        <h4 class="team__name">{{ xodim.name }} {{ xodim.surname }}</h4><span
+                                            class="team__work">{{ xodim.speciality }}</span>
+                                    </div>
+                                    <p class="team__text">{{ xodim.info }}</p>
                                 </div>
-                                <p class="team__text">Integer placerat ullamcorper urna nec rhoncus. Sed velit justo,
-                                    lacinia non sapien</p>
-                            </div>
-                        </div><!-- End / team -->
+                            </div><!-- End / team -->
 
-                    </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
         <!-- End / Section -->
 
 
-        <!-- Section -->
+        <!-- bog'lanish -->
         <section class="md-section" id="id7" style="background-color:#fff;padding:60px 0 0;">
             <div class="row">
                 <div class="col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-2 ">
@@ -768,36 +736,22 @@
                         <div class="main-content">
                             <div class="row">
                                 <div class="col-lg-4 ">
-                                    <form class="contact-form">
-
+                                    <form class="contact-form" action="{% url 'xabar' %}"
+                                          method="post">
+                                        {% csrf_token %}
                                         <!-- form-item -->
                                         <div class="form-item">
-                                            <input class="form-control" type="text" name="input"
+                                            <input class="form-control" type="text" name="name" required
                                                    placeholder="Ismingiz"/>
                                         </div><!-- End / form-item -->
 
-
-                                        <!-- form-item -->
-                                        {#                                        <div class="form-item">#}
-                                        {#                                            <input class="form-control" type="text" name="input" placeholder="email"/>#}
-                                        {#                                        </div><!-- End / form-item -->#}
-
-
-                                        <!-- form-item -->
                                         <div class="form-item">
-                                            <input class="form-control" type="text" name="input" placeholder="Telefon"/>
+                                            <input class="form-control" required type="text" name="phone"
+                                                   placeholder="Telefon"/>
                                         </div><!-- End / form-item -->
 
-
-                                        <!-- form-item -->
-                                        {#                                        <div class="form-item">#}
-                                        {#                                            <input class="form-control" type="text" name="input" placeholder="subject"/>#}
-                                        {#                                        </div><!-- End / form-item -->#}
-
-
-                                        <!-- form-item -->
                                         <div class="form-item">
-                                            <textarea name="message" placeholder="Xabar"
+                                            <textarea name="message" placeholder="Xabar" required
                                                       style="height: 150px;"></textarea>
                                         </div><!-- End / form-item -->
 
@@ -869,7 +823,7 @@
 
                             <!-- sec-title -->
                             <div class="sec-title">
-                                <h2 class="sec-title__title">Biz haqimizda</h2><span class="sec-title__divider"></span>
+                                <h2 class="sec-title__title">Ma'nzil</h2><span class="sec-title__divider"></span>
                             </div><!-- End / sec-title -->
 
                             <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis a rerum ratione aliquam
@@ -880,68 +834,11 @@
                     </div>
                     <div class="col-md-6 col-lg-3 ">
 
-                        <!-- widget -->
-                        {#                        <section class="widget">#}
-                        {##}
-                        {#                            <!-- sec-title -->#}
-                        {#                            <div class="sec-title">#}
-                        {#                                <h2 class="sec-title__title">tag</h2><span class="sec-title__divider"></span>#}
-                        {#                            </div><!-- End / sec-title -->#}
-                        {##}
-                        {##}
-                        {#                            <!-- widget-tag -->#}
-                        {#                            <div class="widget-tag"><a href="#">Dress</a><a href="#">Mini</a><a href="#">Skate#}
-                        {#                                Animal</a><a href="#">Lorem Ipsum</a><a href="#">Litterature</a><a#}
-                        {#                                    href="#">Foreign</a><a href="#">Dessert</a><a href="#">Food</a><a href="#">Litterature</a><a#}
-                        {#                                    href="#">Foreign</a><a href="#">Dessert</a><a href="#">Litterature</a><a href="#">Food</a>#}
-                        {#                            </div><!-- End /  widget-tag -->#}
-                        {##}
-                        {#                        </section><!-- End / widget -->#}
 
                     </div>
                     <div class="col-md-6 col-lg-3 ">
 
-                        <!-- widget -->
-                        {#                        <section class="widget">#}
-                        {##}
-                        {#                            <!-- sec-title -->#}
-                        {#                            <div class="sec-title">#}
-                        {#                                <h2 class="sec-title__title">flickr widget</h2><span class="sec-title__divider"></span>#}
-                        {#                            </div><!-- End / sec-title -->#}
-                        {##}
-                        {##}
-                        {#                            <!-- widget-gallery -->#}
-                        {#                            <div class="widget-gallery">#}
-                        {#                                <div class="widget-gallery__item"><a href="#"#}
-                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
-                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
-                        {#                                <div class="widget-gallery__item"><a href="#"#}
-                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
-                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
-                        {#                                <div class="widget-gallery__item"><a href="#"#}
-                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
-                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
-                        {#                                <div class="widget-gallery__item"><a href="#"#}
-                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
-                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
-                        {#                                <div class="widget-gallery__item"><a href="#"#}
-                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
-                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
-                        {#                                <div class="widget-gallery__item"><a href="#"#}
-                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
-                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
-                        {#                                <div class="widget-gallery__item"><a href="#"#}
-                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
-                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
-                        {#                                <div class="widget-gallery__item"><a href="#"#}
-                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
-                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
-                        {#                                <div class="widget-gallery__item"><a href="#"#}
-                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
-                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
-                        {#                            </div><!-- End /  widget-gallery -->#}
-                        {##}
-                        {#                        </section><!-- End / widget -->#}
+
 
                     </div>
                     <div class="col-lg-3 ">
@@ -951,7 +848,7 @@
 
                             <!-- sec-title -->
                             <div class="sec-title">
-                                <h2 class="sec-title__title">working hours</h2><span class="sec-title__divider"></span>
+{#                                <h2 class="sec-title__title">Ish vahti</h2><span class="sec-title__divider"></span>#}
                             </div><!-- End / sec-title -->
 
                             <p> Lorem ipsum dolor sit amet, consectetur</p>

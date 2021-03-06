@@ -2,10 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<head>
+
     <title>Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -140,26 +137,55 @@
 
     </hero><!-- End / hero -->
 
-    <section class="md-section">
-        <div style="width: 98%" class="container">
-            <section class="md-section" style="background-color:#fff;padding:100px 0;">
-                <div style=" " class="container">
-                    <div class="row">
-                        <div class="sec-title sec-title__lg-title md-text-center">
-                            <h2 class="sec-title__title">{{ yangilik.title }}</h2><span
-                                class="sec-title__divider"></span>
-                        </div><!-- End / sec-title -->
-                        <div>
-                            {{ yangilik.full_info|safe }}
-                        </div>
-                        <div style="text-align: right; margin-top: 50px">
-                            {{ yangilik.created_dt }}
+    <div style="margin-top: -50px">
+        <section class="md-section">
+            <div style="width: 98%" class="container">
+                <section class="md-section" style="background-color:#fff;padding:100px 0;">
+                    <div style=" " class="container">
+                        <div class="row">
+                            <div class="sec-title sec-title__lg-title md-text-center">
+                                <h2 class="sec-title__title">{{ korxona.name }}</h2><span
+                                    class="sec-title__divider"></span>
+                            </div><!-- End / sec-title -->
+                            <div>
+                                {{ korxona.full_info|safe }}
+                            </div>
+
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
+        </section>
+    </div>
+
+    <div style="margin-top: -50px">
+        <div class="sec-title sec-title__lg-title md-text-center">
+            <h2 class="sec-title__title">So'ngi Yangiliklar</h2><span class="sec-title__divider"></span>
         </div>
-    </section>
+    </div>
+    <div style="margin-left: 15px; margin-right: 30px;" class="row row-eq-height">
+
+        {% for yangilik in yangiliklar %}
+            {% if forloop.counter < 4 %}
+                <a href="{% url 'yangilik' yangilik.id %}">
+                    <div class="col-sm-2 col-md-2 col-lg-4 ">
+                        <div class="services">
+                            <div style="margin:10px" class="services__img"><img src="{{ yangilik.image.url }}" alt=""/>
+                            </div>
+                            <h4 style="text-align: center" class="">{{ yangilik.title }}</h4>
+
+
+                            <!-- btn -->
+
+
+                        </div><!-- End / services -->
+                    </div>
+                </a>
+            {% endif %}
+
+        {% endfor %}
+    </div>
+
     <footer class="footer-01 md-skin-dark">
         <div class="footer-01__widget">
             <div class="container">
@@ -171,7 +197,7 @@
 
                             <!-- sec-title -->
                             <div class="sec-title">
-                                <h2 class="sec-title__title">Biz haqimizda</h2><span class="sec-title__divider"></span>
+                                <h2 class="sec-title__title">Ma'nzil</h2><span class="sec-title__divider"></span>
                             </div><!-- End / sec-title -->
 
                             <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis a rerum ratione aliquam
@@ -182,68 +208,11 @@
                     </div>
                     <div class="col-md-6 col-lg-3 ">
 
-                        <!-- widget -->
-                        {#                        <section class="widget">#}
-                        {##}
-                        {#                            <!-- sec-title -->#}
-                        {#                            <div class="sec-title">#}
-                        {#                                <h2 class="sec-title__title">tag</h2><span class="sec-title__divider"></span>#}
-                        {#                            </div><!-- End / sec-title -->#}
-                        {##}
-                        {##}
-                        {#                            <!-- widget-tag -->#}
-                        {#                            <div class="widget-tag"><a href="#">Dress</a><a href="#">Mini</a><a href="#">Skate#}
-                        {#                                Animal</a><a href="#">Lorem Ipsum</a><a href="#">Litterature</a><a#}
-                        {#                                    href="#">Foreign</a><a href="#">Dessert</a><a href="#">Food</a><a href="#">Litterature</a><a#}
-                        {#                                    href="#">Foreign</a><a href="#">Dessert</a><a href="#">Litterature</a><a href="#">Food</a>#}
-                        {#                            </div><!-- End /  widget-tag -->#}
-                        {##}
-                        {#                        </section><!-- End / widget -->#}
 
                     </div>
                     <div class="col-md-6 col-lg-3 ">
 
-                        <!-- widget -->
-                        {#                        <section class="widget">#}
-                        {##}
-                        {#                            <!-- sec-title -->#}
-                        {#                            <div class="sec-title">#}
-                        {#                                <h2 class="sec-title__title">flickr widget</h2><span class="sec-title__divider"></span>#}
-                        {#                            </div><!-- End / sec-title -->#}
-                        {##}
-                        {##}
-                        {#                            <!-- widget-gallery -->#}
-                        {#                            <div class="widget-gallery">#}
-                        {#                                <div class="widget-gallery__item"><a href="#"#}
-                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
-                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
-                        {#                                <div class="widget-gallery__item"><a href="#"#}
-                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
-                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
-                        {#                                <div class="widget-gallery__item"><a href="#"#}
-                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
-                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
-                        {#                                <div class="widget-gallery__item"><a href="#"#}
-                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
-                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
-                        {#                                <div class="widget-gallery__item"><a href="#"#}
-                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
-                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
-                        {#                                <div class="widget-gallery__item"><a href="#"#}
-                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
-                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
-                        {#                                <div class="widget-gallery__item"><a href="#"#}
-                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
-                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
-                        {#                                <div class="widget-gallery__item"><a href="#"#}
-                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
-                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
-                        {#                                <div class="widget-gallery__item"><a href="#"#}
-                        {#                                                                     style="background-image: url('http://placehold.it/400x400');"><img#}
-                        {#                                        src="http://placehold.it/400x400" alt=""/></a></div>#}
-                        {#                            </div><!-- End /  widget-gallery -->#}
-                        {##}
-                        {#                        </section><!-- End / widget -->#}
+
 
                     </div>
                     <div class="col-lg-3 ">
@@ -253,7 +222,7 @@
 
                             <!-- sec-title -->
                             <div class="sec-title">
-                                <h2 class="sec-title__title">working hours</h2><span class="sec-title__divider"></span>
+{#                                <h2 class="sec-title__title">Ish vahti</h2><span class="sec-title__divider"></span>#}
                             </div><!-- End / sec-title -->
 
                             <p> Lorem ipsum dolor sit amet, consectetur</p>
