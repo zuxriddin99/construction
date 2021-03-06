@@ -13,6 +13,7 @@ except:
 def send_message_via_bot(request, msg):
     bot = telegram.Bot(token=BOT_TOKEN)
     try:
+        print(telegram_id)
         bot.sendMessage(telegram_id, text=msg, parse_mode='html')
     except:
         pass
