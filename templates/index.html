@@ -532,7 +532,7 @@
 
                             <!-- ishlar -->
                             <div class="team">
-                                <a href="#">
+                                <a href="{% url 'bizni-korxona' foo.id %}">
                                     <div class="team__img"><img src="{{ foo.image.url }}" alt=""/>
                                         <!-- End / sec-title -->
                                         <div class="team__overlay">
@@ -642,7 +642,16 @@
                     <div class="sec-title sec-title__lg-title md-text-center">
                         <h2 class="sec-title__title">Biz bilan bog'lanish</h2><span class="sec-title__divider"></span>
                     </div><!-- End / sec-title -->
-
+                    {% if messages %}
+                        <ul style="margin: 20px" class="messages">
+                            {% for message in messages %}
+                                <div style="background-color: #a5e378;border-radius: 30px">
+                                    <li style="padding: 20px; color: black; font-size: 20px" {% if message.tags %}
+                                        class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                </div>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </div>
             </div>
             <div class="container">
