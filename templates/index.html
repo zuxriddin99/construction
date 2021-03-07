@@ -1,8 +1,10 @@
 {% load static %}
+{% load tags %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home</title>
+    <link rel="shortcut icon" href="{% static 'assets/img/3.png' %}"/>
+    <title>Bosh sahifa</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
@@ -46,7 +48,7 @@
 
                     <!-- raising-menu -->
                     <ul class="raising-menu">
-                        <li class="current"><a href="#id1">Bosh saxifa</a>
+                        <li class="current"><a href="#id1">Bosh sahifa</a>
                         </li>
                         <li><a href="#id2">Biz haqimizda</a>
                         </li>
@@ -95,8 +97,7 @@
                                     Phasellus aliquam nisi sit amet</p>
 
                                 <!-- btn -->
-                                <a class="btn btn-primary" href="#">button
-                                </a><!-- End / btn -->
+
 
                             </div>
                         </div>
@@ -109,8 +110,7 @@
                                     turpis. Nulla quis turpis sed augue</p>
 
                                 <!-- btn -->
-                                <a class="btn btn-primary" href="#">button
-                                </a><!-- End / btn -->
+
 
                             </div>
                         </div>
@@ -123,8 +123,7 @@
                                     consectetur, lorem a cursus</p>
 
                                 <!-- btn -->
-                                <a class="btn btn-primary" href="#">button
-                                </a><!-- End / btn -->
+
 
                             </div>
                         </div>
@@ -137,8 +136,7 @@
                                     id quam id turpis suscipit</p>
 
                                 <!-- btn -->
-                                <a class="btn btn-primary" href="#">button
-                                </a><!-- End / btn -->
+
 
                             </div>
                         </div>
@@ -248,8 +246,9 @@
                             <div class="services">
                                 <div class="services__img"><img src="{{ yangilik.image.url }}" alt=""/>
                                 </div>
-                                <h2 class="services__title"><a href="#">{{ yangilik.title }}</a></h2>
-                                <div class="services__desc">{{ yangilik.short_info }}
+                                <h2 class="services__title"><a
+                                        href="{% url 'yangilik' yangilik.id %}">{{ yangilik.title }}</a></h2>
+                                <div class="services__desc">{{ yangilik.short_info|size_checker|safe }}
                                 </div>
 
                                 <!-- btn -->
@@ -548,7 +547,7 @@
                                 <div class="team__user">
                                     <h4 class="team__name">{{ foo.title }}</h4>
                                 </div>
-                                <p class="team__text">{{ foo.short_info }}</p>
+                                <p class="team__text">{{ foo.short_info|size_checker|safe }}</p>
                             </div>
                         </div><!-- End / ishlar -->
                     {% endfor %}
@@ -620,7 +619,7 @@
                                         <h4 class="team__name">{{ xodim.name }} {{ xodim.surname }}</h4><span
                                             class="team__work">{{ xodim.speciality }}</span>
                                     </div>
-                                    <p class="team__text">{{ xodim.info }}</p>
+                                    <p class="team__text">{{ xodim.info|size_checker|safe }}</p>
                                 </div>
                             </div><!-- End / team -->
 
@@ -800,7 +799,9 @@
         <!-- copyright-01 -->
         <div class="copyright-01 md-text-center">
             <div class="container">
-                <p class="copyright-01__copy">2021 &copy; Copyright Zuxriddin. All rights Reserved.</p>
+                <p class="copyright-01__copy">2021 &copy; Copyright <a style="color: #f0542c"
+                                                                       href="https://telegram.me/zuxriddin099/">Zuxriddin.</a>
+                    All rights Reserved.</p>
             </div>
         </div><!-- End / copyright-01 -->
 

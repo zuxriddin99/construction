@@ -32,13 +32,13 @@ class YangilikView(DetailView):
         return context
 
 
-class BizbingIshView(DetailView):
+class BizningIshView(DetailView):
     queryset = BizningIshlarimiz.objects.all()
     template_name = 'work.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['yangiliklar'] = Yangilik.objects.all().exclude(id=self.kwargs['pk']).order_by('-created_dt')
+        context['yangiliklar'] = Yangilik.objects.all().order_by('-created_dt')
         return context
 
 
@@ -68,7 +68,7 @@ class XabarView(CreateView):
         message += today.strftime("%d/%m/%Y")
         try:
             send_message_via_bot(request, message)
-            messages.info(request, 'Sizning a\'rizangiz korxona raxbariga yetkazildi. Tez orada sizga bog\'lanishadi')
+            messages.info(request, 'Sizning a\'rizangiz korxona raxbariga yetkazildi. Tez orada siz bilan bog\'lanishadi')
         except:
             pass
         return super().post(request, *args, **kwargs)
